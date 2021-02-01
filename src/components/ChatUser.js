@@ -49,7 +49,7 @@ export default function ChatUser(props) {
 			<UserStatus status={props.user.status} />
 			<div className="flexBox columnDirection">
 				<UserName>{props.user.name}</UserName>
-				<IsTypingStatus className={props.user.isTyping ? "showTypingStatus" : "hideTypingStatus"}>Digitando...</IsTypingStatus>
+				<IsTypingStatus className={props.user.isTyping ? "showTypingStatus" : "hideTypingStatus"}>Typing...</IsTypingStatus>
 			</div>
 		</div>
 	);

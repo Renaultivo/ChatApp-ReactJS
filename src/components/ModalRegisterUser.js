@@ -61,7 +61,7 @@ export default function ModalRegisterUser(props) {
         <InputLayout
           className="flexBox rowDirection shadowBottom"
           onEnter={onEnterHandler}
-          placeholder="Nome de Usuário" />
+          placeholder="User Name" />
         <ImgListBackground className="flexBoxAlign flexWrap">
           {
             imgList.map((src, index) =>
