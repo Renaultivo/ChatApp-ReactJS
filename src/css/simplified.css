@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #555555;
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #888888;
+}
+.noSelectable::selection {
+    color: inherit;
+    background-color: inherit;
+}
+.lightScroll::-webkit-scrollbar {
+    width: 10px;
+}
+.lightScroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+.lightScroll::-webkit-scrollbar-thumb {
+    background: #555555;
+    border-radius: 20px;
+}
+.lightScroll::-webkit-scrollbar-thumb:hover {
+    background: #888888;
+}
+.flexBox {
+    display: flex;
+}
+.flexBoxAlign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flexWrap {
+    flex-wrap: wrap;
+}
+.alignStart {
+    align-items: flex-start;
+}
+.alignEnd {
+    align-items: flex-end;
+}
+.alignCenter {
+    align-items: center;
+}
+.alignSelfCenter {
+    align-self: center;
+}
+.justifyEnd {
+    justify-content: flex-end;
+}
+.justifyStart {
+    justify-content: flex-start;
+}
+.justifyCenter {
+    justify-content: center;
+}
+.justifyBetween {
+    justify-content: space-between;
+}
+.rowDirection {
+    flex-direction: row;
+}
+.columnDirection {
+    flex-direction: column;
+}
+.hoverGrow {
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+.hoverGrow:hover {
+    transform: scale(1.1);
+}
+@media (pointer: coarse) {
+    .hoverGrow {
+        cursor: none;
+    }
+}
+.underlineText {
+    padding: 0 5px;
+    border-bottom: 1px solid #999999;
+}

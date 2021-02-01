@@ -1,38 +1,193 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+}
+body, #root {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #222222;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.chatBackground {
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  background-color: #181818;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.userListBox {
+  flex: 1;
+  padding: 10px;
+  overflow: auto;
+  min-width: 236px;
+  max-height: calc(100% - 20px);
+  align-self: flex-start;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.userList {
   display: flex;
-  flex-direction: column;
+  max-width: 280px;
+  flex-wrap: wrap;
   align-items: center;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.chatBox {
+  flex: 5;
+  min-width: 240px;
+  max-height: 100%;;
+  background-color: #111111;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.chatUser {
+  width: 220px;
+  height: calc(75px - 20px);
+  margin: 20px;
+  padding: 10px;
+  animation: joinUserAnimation linear 0.3s;
+  box-shadow: 0 0 10px #000000;
+  border-radius: 10px;
+}
+
+.messageBox {
+  width: calc(100% - 40px);
+  padding: 50px 20px 20px 20px;
+  overflow-y: scroll;
+  height: calc(100% - 80px);
+}
+
+.messageSendBox {
+  width: 100%;
+  height: 80px;
+  z-index: 10;
+  box-shadow: 14px 0px 10px #000000;
+}
+
+.shadowBottom {
+  box-shadow: 0 0 10px #000000;
+}
+
+.hideTypingStatus {
+  opacity: 1;
+  animation: zoomOutAnimation linear 0.3s;
+  transform: scaleY(0);
+}
+
+.showTypingStatus {
+  opacity: 1;
+  animation: zoomInAnimation linear 0.3s;
+  transform: scaleY(1);
+}
+
+label {
+  display: none;
+  color: #DDDDDD;
+  margin: 10px;
+  font-size: 18px;
+}
+
+#userCheckBox {
+  width: 30px;
+  height: 30px;
+  margin: 20px;
+  display: none;
+}
+
+@keyframes zoomInAnimation {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
+}
+
+@keyframes zoomOutAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes joinUserAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes dropMessageAnimation {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+
+  label {
+    display: block;
+  }
+  
+  #userCheckBox {
+    display: flex;
+  }
+
+  .userListBox {
+    height: 60px;
+    min-width: calc(100% - 40px);
+  }
+
+  #innerUserList {
+    display: none;
+  }
+
+  #userCheckBox:checked + #innerUserList {
+    display: flex;
+  }
+
+  .userList {
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    z-index: 10;
+    position: fixed;
+    overflow: auto;
+    max-width: 100%;
+    max-height: 50%;
+    min-height: 80px;
+    box-shadow: 0 0 10px #000000;
+    background-color: #181818;
+  }
+
+  .chatBox {
+    margin-top: 80px;
+    max-height: calc(100% - 80px);
+  }
+
 }
