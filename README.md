@@ -14,7 +14,7 @@
   <img width="800" alt="Screenshot 0 - mobile" src="/screenshots/desktop.png">
 </p>
 
-Como executar o projeto?
+Run this project with
 ### `npm start`
 
 - [x] Register new users
