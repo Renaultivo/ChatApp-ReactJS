@@ -1,6 +1,6 @@
 ![npm version](https://img.shields.io/npm/v/react.svg?style=flat)
 
-# ChatApp - An simple and easy to go web-chat
+# ChatApp - A simple and easy to go web-chat
 #### WebApp with ReactJS and Socket.io
 ## Screenshots | Mobile
 
